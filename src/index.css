@@ -193,6 +193,7 @@ nav a:hover {
 .card img {
   width: 100%;
   height: 200px;
+  border-radius: 15px;
   object-fit: cover;
   transition: transform 0.3s;
 }
@@ -259,6 +260,7 @@ nav a:hover {
 .item-galeria img {
   width: 100%;
   height: 150px;
+  border-radius: 15px;
   object-fit: cover;
   display: block;
 }
@@ -540,7 +542,7 @@ footer .copyright {
   }
 
   #home {
-    padding-top: 160px 20px 0;
+    padding-top: 100px;
   }
 
   #propiedades,
@@ -647,18 +649,32 @@ footer .copyright {
   display: block;
 }
 
+/* Estilo del botón toggle del menú */
+.menu-toggle {
+  background: #1f3b5b;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 /* Reglas para enlaces en contenido-home */
 .contenido-home a, .contenido-home a:visited {
-  background-color: #1f3b5b !important;
-  color: #ffffff !important;
+  background-color: #1f3b5b;
+  color: #ffffff;
+  padding: 12px 28px;
   border-radius: 8px;
-  padding: 12px 24px;
+  font-weight: 600;
   text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
 }
 
 .contenido-home a:hover {
-  background-color: #d4af37 !important;
-  color: #1f3b5b !important;
+  background-color: #d4af37;
+  color: #1f3b5b;
 }
 
 /* Media queries responsive */
