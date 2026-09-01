@@ -1,59 +1,37 @@
+/*Reset de estilos para evitar inconsistencias entre navegadores*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Variables de colores y estilos para mantener la coherencia en el diseño */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+    --azul: #1f3b5b;
+    --gris: #f4f4f4;
+    --texto: #333;
+    --radio: 15px;/* Radio de bordes para botones y tarjetas */
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
+/* Estilos generales para el cuerpo del documento, aplicando la fuente, colores y espaciado */
 body {
-  margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--gris);
+    color: var(--texto);
+    line-height: 1.5;
+
+}
+/* Estilos para las imágenes, asegurando que se adapten al contenedor sin distorsionarse */
+img {
+    max-width: 100%;
+    display: block;
+}
+/* afecta a todos los elementos dentro del main, para darles un poco de espacio y evitar que estén pegados al borde de la pantalla */
+main {
+    padding-top: 0px; /*espacio entre la imagen y el texto del logo*/
 }
 
+/* --- CLASES DEL COMPONENTE APP.JSX --- */
+
+/* Root y container */
 #root {
   width: 100%;
   max-width: 100%;
@@ -66,84 +44,21 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
-
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e5e4e7;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
-  background: var(--bg);
+  background: #fff;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.logo img {
-  width: 40px;
-  height: auto;
-}
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
+/* Nav */
 nav {
   display: flex;
   gap: 32px;
@@ -163,16 +78,16 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--azul);
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: #bb5eff;
 }
 
-/* Home Section */
+/* Hero / Home */
 #home {
   min-height: 100vh;
   display: flex;
@@ -182,6 +97,7 @@ nav a:hover {
   text-align: center;
   padding: 120px 20px 0;
   position: relative;
+  background: #fff;
 }
 
 .home-hero {
@@ -200,6 +116,7 @@ nav a:hover {
   font-size: 38px;
   letter-spacing: -1.14px;
   margin-bottom: 20px;
+  color: var(--azul);
 }
 
 .contenido-home p {
@@ -207,13 +124,14 @@ nav a:hover {
   max-width: 600px;
   margin: 0 auto 30px;
   line-height: 1.6;
+  color: var(--texto);
 }
 
 .contenido-home a {
   display: inline-block;
   padding: 12px 24px;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--azul);
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   border-radius: 4px;
@@ -228,25 +146,27 @@ nav a:hover {
 .eslogan {
   padding: 40px;
   text-align: center;
+  background: var(--azul);
+  color: #fff;
 }
 
 .eslogan p {
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-h);
   margin: 0;
 }
 
 /* Propiedades Destacadas */
 #propiedades {
   padding: 60px 20px;
-  background: var(--bg);
+  background: var(--gris);
 }
 
 #propiedades h2 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 36px;
+  color: var(--texto);
 }
 
 .contenedor-cards {
@@ -258,11 +178,12 @@ nav a:hover {
 }
 
 .card {
-  background: var(--bg);
-  border-radius: 8px;
+  background: #fff;
+  border-radius: var(--radio);
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
   transition: transform 0.3s;
+  width: 300px;
 }
 
 .card:hover {
@@ -283,19 +204,21 @@ nav a:hover {
 .card h3 {
   margin: 20px 20px 0;
   font-size: 20px;
-  color: var(--text-h);
+  color: var(--texto);
+  padding: 0 20px;
 }
 
 .card p {
   margin: 10px 20px 20px;
-  color: var(--text);
+  color: var(--texto);
   font-size: 14px;
+  padding: 0 20px;
 }
 
 .card a {
   display: block;
   padding: 0 20px 20px;
-  color: var(--accent);
+  color: var(--azul);
   text-align: right;
   font-weight: 500;
   text-decoration: none;
@@ -304,7 +227,7 @@ nav a:hover {
 /* Galería Alquiler */
 #alquiler {
   padding: 60px 20px;
-  background: var(--bg);
+  background: var(--gris);
 }
 
 #alquiler h2 {
@@ -321,10 +244,10 @@ nav a:hover {
 }
 
 .item-galeria {
-  background: var(--bg);
+  background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
   text-align: left;
   transition: transform 0.3s;
 }
@@ -343,14 +266,14 @@ nav a:hover {
 .item-galeria p {
   padding: 15px 20px;
   margin: 0;
-  color: var(--text-h);
+  color: var(--texto);
   font-size: 14px;
 }
 
 /* Beneficios */
 .beneficios {
   padding: 60px 20px;
-  background: var(--bg);
+  background: var(--gris);
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -364,26 +287,26 @@ nav a:hover {
 
 .beneficio i {
   font-size: 36px;
-  color: var(--accent);
+  color: var(--azul);
   margin-bottom: 20px;
   display: block;
 }
 
 .beneficio h3 {
   font-size: 20px;
-  color: var(--text-h);
+  color: var(--texto);
   margin-bottom: 10px;
 }
 
 .beneficio p {
-  color: var(--text);
+  color: var(--texto);
   font-size: 14px;
 }
 
 /* Galería Venta */
 #venta {
   padding: 60px 20px;
-  background: var(--bg);
+  background: var(--gris);
 }
 
 #venta h2 {
@@ -403,17 +326,17 @@ nav a:hover {
 .frase-final {
   padding: 60px 20px;
   text-align: center;
-  background: var(--bg);
+  background: var(--gris);
 }
 
 .frase-final h2 {
   font-size: 36px;
-  color: var(--text-h);
+  color: var(--texto);
   margin-bottom: 20px;
 }
 
 .frase-final p {
-  color: var(--text);
+  color: var(--texto);
   font-size: 18px;
   margin: 0;
 }
@@ -421,7 +344,7 @@ nav a:hover {
 /* Formulario Tasación */
 #tasacion {
   padding: 60px 20px;
-  background: var(--bg);
+  background: var(--gris);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -430,6 +353,7 @@ nav a:hover {
   text-align: center;
   margin-bottom: 30px;
   font-size: 32px;
+  color: var(--azul);
 }
 
 #tasacion form {
@@ -444,7 +368,7 @@ nav a:hover {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--texto);
 }
 
 #tasacion input,
@@ -452,12 +376,12 @@ nav a:hover {
 #tasacion textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid #e5e4e7;
   border-radius: 4px;
-  font-family: var(--sans);
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--texto);
+  background: #fff;
   transition: border-color 0.3s;
 }
 
@@ -465,7 +389,7 @@ nav a:hover {
 #tasacion select:focus,
 #tasacion textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--azul);
 }
 
 #tasacion .checkbox {
@@ -474,7 +398,7 @@ nav a:hover {
   gap: 10px;
   margin: 20px 0;
   padding: 20px;
-  background: var(--bg);
+  background: #fff;
   border-radius: 8px;
 }
 
@@ -501,8 +425,8 @@ nav a:hover {
 }
 
 #tasacion button[type="submit"] {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--azul);
+  color: #fff;
 }
 
 #tasacion button[type="submit"]:hover {
@@ -510,19 +434,20 @@ nav a:hover {
 }
 
 #tasacion button[type="reset"] {
-  background: var(--bg);
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--texto);
+  border: 1px solid #e5e4e7;
 }
 
 #tasacion button[type="reset"]:hover {
-  background: var(--border);
+  background: #e5e4e7;
 }
 
 /* Footer */
 footer {
   padding: 40px 20px;
-  background: var(--bg);
+  background: var(--azul);
+  color: #fff;
   margin-top: auto;
 }
 
@@ -538,11 +463,11 @@ footer .info-footer {
 footer .info-footer p {
   margin: 0;
   font-size: 14px;
-  color: var(--text);
+  color: #fff;
 }
 
 footer .info-footer a {
-  color: var(--accent);
+  color: #fff;
   text-decoration: none;
 }
 
@@ -556,19 +481,19 @@ footer .redes-sociales {
 footer .redes-sociales a {
   width: 40px;
   height: 40px;
-  background: var(--social-bg);
+  background: rgba(255,255,255,0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text);
+  color: #fff;
   text-decoration: none;
   transition: background 0.3s;
 }
 
 footer .redes-sociales a:hover {
-  background: var(--accent);
-  color: var(--bg);
+  background: rgba(255,255,255,0.2);
+  color: #fff;
 }
 
 footer .redes-sociales i {
@@ -577,7 +502,6 @@ footer .redes-sociales i {
 
 footer .copyright {
   text-align: center;
-  color: var(--text);
   font-size: 13px;
   margin-top: 20px;
 }
@@ -596,7 +520,7 @@ footer .copyright {
     position: fixed;
     top: 60px;
     right: 0;
-    background: var(--bg);
+    background: #fff;
     flex-direction: column;
     width: 200px;
     padding: 20px;
@@ -612,7 +536,7 @@ footer .copyright {
   nav a {
     width: 100%;
     padding: 10px 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #e5e4e7;
   }
 
   #home {
@@ -639,6 +563,77 @@ footer .copyright {
 
   .frase-final h2 {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #home {
+    padding-top: 120px 20px 0;
+  }
+
+  #propiedades .card {
+    width: 100%;
+  }
+
+  #propiedades h2 {
+    font-size: 28px;
+  }
+
+  #alquiler .item-galeria img {
+    height: 120px;
+  }
+
+  #venta .item-galeria img {
+    height: 120px;
+  }
+
+  .beneficio {
+    min-width: 150px;
+    padding: 20px 10px;
+  }
+
+  .beneficio i {
+    font-size: 24px;
+  }
+
+  .frase-final h2 {
+    font-size: 24px;
+  }
+
+  #tasacion {
+    padding: 40px 20px;
+  }
+
+  #tasacion form {
+    max-width: 100%;
+  }
+
+  #tasacion input,
+  #tasacion select,
+  #tasacion textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  #tasacion .botones-formulario {
+    flex-direction: column;
+  }
+
+  #tasacion button {
+    width: 100%;
   }
 }
 
