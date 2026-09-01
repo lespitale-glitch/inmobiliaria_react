@@ -59,9 +59,9 @@ export default function App() {
       <main>
         <section id="home">
           <img
-            src={heroImg}
+            src="/img/destacadas/casa_con_pileta.jpeg"
             alt="Casa principal"
-            className="home-hero"
+            className="casa_principal"
           />
           <div className="contenido-home">
             <h2>Encontrá tu próxima propiedad</h2>
@@ -69,7 +69,7 @@ export default function App() {
               Casas, departamentos y oficinas en alquiler o venta. Te ayudamos a
               encontrar el lugar ideal.
             </p>
-            <a href="#propiedades">Ver propiedades</a>
+            <a href="#propiedades" className="btn_ver_propiedades">Ver propiedades</a>
           </div>
         </section>
 
@@ -87,6 +87,7 @@ export default function App() {
             <img
               src={`/img/destacadas/${prop.img}`}
               alt={prop.titulo}
+              className="card_img"
             />
             <h3>{prop.titulo}</h3>
             <p>{prop.subtitulo}</p>
@@ -105,6 +106,7 @@ export default function App() {
             <img
               src={`/img/alquiler/${prop.img}`}
               alt={prop.titulo}
+              className="card_img"
             />
             <p>{prop.subtitulo}</p>
           </div>
@@ -144,6 +146,7 @@ export default function App() {
             <img
               src={`/img/venta/${prop.img}`}
               alt={prop.titulo}
+              className="card_img"
             />
             <p>{prop.subtitulo}</p>
           </div>
