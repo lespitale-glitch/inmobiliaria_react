@@ -1,6 +1,6 @@
 import './index.css';
 import React from 'react';
-import heroImg from '../public/img/NT/NT_T_simple.png';
+import heroImg from '/img/NT/NT_T_simple.png';
 
 
 const propertiesDestacadas = [
